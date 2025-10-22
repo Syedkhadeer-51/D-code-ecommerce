@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ShoppingCart, Heart, User, Menu, X } from 'lucide-react';
+import { useCartState } from '../context/CartContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { cart, wishlist } = useCartState();
 
   return (
     <nav className="bg-white shadow-md">
@@ -37,11 +39,21 @@ const Navbar = () => {
 
           {/* Navigation Icons - hidden on mobile */}
           <div className="hidden sm:flex items-center space-x-4">
-            <Link to="/cart" className="p-2 hover:bg-gray-100 rounded-full">
+            <Link to="/cart" className="relative p-2 hover:bg-gray-100 rounded-full">
               <ShoppingCart className="h-5 w-5 text-gray-600" />
+              {cart && cart.length > 0 && (
+                <span className="absolute -top-1 -right-1 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-semibold leading-none text-white bg-red-600 rounded">
+                  {cart.length}
+                </span>
+              )}
             </Link>
-            <Link to="/wishlist" className="p-2 hover:bg-gray-100 rounded-full">
+            <Link to="/wishlist" className="relative p-2 hover:bg-gray-100 rounded-full">
               <Heart className="h-5 w-5 text-gray-600" />
+              {wishlist && wishlist.length > 0 && (
+                <span className="absolute -top-1 -right-1 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-semibold leading-none text-white bg-red-600 rounded">
+                  {wishlist.length}
+                </span>
+              )}
             </Link>
             <Link to="/profile" className="p-2 hover:bg-gray-100 rounded-full">
               <User className="h-5 w-5 text-gray-600" />
@@ -76,20 +88,30 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Mobile navigation links */}
+            {/* Mobile navigation links with badges */}
             <Link
               to="/cart"
-              className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-gray-100"
+              className="relative flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-gray-100"
             >
               <ShoppingCart className="h-5 w-5 mr-2" />
               Cart
+              {cart && cart.length > 0 && (
+                <span className="absolute top-1 right-2 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-semibold leading-none text-white bg-red-600 rounded-full">
+                  {cart.length}
+                </span>
+              )}
             </Link>
             <Link
               to="/wishlist"
-              className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-gray-100"
+              className="relative flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-gray-100"
             >
               <Heart className="h-5 w-5 mr-2" />
               Wishlist
+              {wishlist && wishlist.length > 0 && (
+                <span className="absolute top-1 right-2 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-semibold leading-none text-white bg-red-600 rounded-full">
+                  {wishlist.length}
+                </span>
+              )}
             </Link>
             <Link
               to="/profile"

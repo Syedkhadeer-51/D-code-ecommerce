@@ -3,9 +3,10 @@ import { products } from '../data/Products';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { OrbitControls, Environment } from '@react-three/drei';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Heart, Share2, Star, CircleChevronLeft, Rotate3D, ZoomIn } from 'lucide-react';
 import ProductMesh from '../scene/ProductMesh';
+import { useCartDispatch } from '../context/CartContext';
 
 
 
@@ -15,6 +16,8 @@ const Product = () => {
   if (!product) {
     return <div>Product not found</div>;
   }
+  const dispatch = useCartDispatch();
+  const navigate = useNavigate();
 
   return (
     <section className="bg-white py-8">
@@ -82,12 +85,25 @@ const Product = () => {
               <li>Perfect for everyday use and special occasions.</li>
             </ul>
             {/* CTA Button */}
-            <button className="w-full bg-gray-900 hover:bg-gray-800 text-white py-2.5 mt-3 mb-2 rounded-lg font-bold transition-colors duration-200">
+            <button
+              onClick={() => {
+                // add to cart and navigate to cart page
+                dispatch({ type: 'ADD_TO_CART', payload: product });
+                navigate('/cart');
+              }}
+              className="w-full bg-gray-900 hover:bg-gray-800 text-white py-2.5 mt-3 mb-2 rounded-lg font-bold transition-colors duration-200"
+            >
               Add To Cart
             </button>
             {/* Wishlist and share row */}
             <div className="flex items-center gap-6 mb-6">
-              <button className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
+              <button
+                onClick={() => {
+                  dispatch({ type: 'ADD_TO_WISHLIST', payload: product });
+                  navigate('/wishlist');
+                }}
+                className="flex items-center gap-1 text-gray-700 hover:text-gray-900"
+              >
                 <Heart size={18} className="mr-1" /> Wishlist
               </button>
               <button className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
