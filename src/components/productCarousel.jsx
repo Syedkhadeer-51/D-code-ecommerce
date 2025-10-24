@@ -35,7 +35,7 @@ const products = [
     id: 5,
     image: "/assets/carousel-furniture.png",
     category: "Furniture",
-    name: "Comfortable bean bags from Ikea",
+    name: "Comfortable bean bags",
     price: "Rs. 1599.00"
   },
   {
