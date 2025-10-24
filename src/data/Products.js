@@ -7,6 +7,7 @@ export const products = [
     model: "/models/apple-watch.glb",
     description: "Apple Watch Series 6 with advanced health features.",
     brand: "Apple",
+    category: 'watches',
     ratings: 4.8,
     discount: 15,
     fov:5
@@ -19,6 +20,7 @@ export const products = [
     model: "/models/iphone.glb",
     description: "The latest new Iphone 13.",
     brand: "Apple",
+    category: 'accessories',
     ratings: 4.8,
     discount: 15,
     fov:12
@@ -31,6 +33,7 @@ export const products = [
     model: "/models/ikea-chair.glb",
     description: "Comfortable and stylish chair from Ikea.",
     brand: "Ikea",
+    category: 'furniture',
     ratings: 4.8,
     discount: 15,
     fov:22

@@ -7,6 +7,7 @@ import Product from "./pages/Product";
 import Cart from './pages/Cart';
 import Wishlist from './pages/Wishlist';
 import Profile from './pages/Profile';
+import CategoryProducts from './pages/CategoryProducts';
 import { CartProvider } from './context/CartContext';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/category/:id" element={<CategoryProducts />} />
             <Route path="/product/:id" element={<Product />} />
           </Routes>
         </Router>
