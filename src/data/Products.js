@@ -10,7 +10,7 @@ export const products = [
     category: 'watches',
     ratings: 4.8,
     discount: 15,
-    fov:5
+    fov:12
   },
   {
     id: "2",

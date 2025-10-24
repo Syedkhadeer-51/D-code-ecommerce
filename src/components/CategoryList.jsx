@@ -15,7 +15,7 @@ const categories = [
 
 const CategoryList = () => {
   return (
-    <section className="py-8">
+    <section className="py-8" id='categories'>
       <div className="max-w-6xl mx-auto px-4">
         <h3 className="text-center text-lg font-medium text-gray-700 mb-6">Explore our Categories</h3>
 
