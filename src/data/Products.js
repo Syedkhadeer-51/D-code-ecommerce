@@ -115,8 +115,23 @@ export const products = [
     category: 'jewellery',
     ratings: 4.6,
     discount: 15,
+    fov: 45,
+    position: [0, 0.95, 0],
+    rotation: [0, 1, 0]
+  },
+    {
+    id: "9",
+    name: "Tiffany & Co gold ring",
+    price: "4,35,999",
+    thumbnail: "/thumbnails/Tiffany-gold-ring.png",
+    model: "/models/tiffany-gold-ring.glb",
+    description: "Tiffany & Co. elegant gold ring.",
+    brand: "Tiffany & Co.",
+    category: 'jewellery',
+    ratings: 4.5,
+    discount: 15,
     fov: 40,
-    position: [0, 0.65, -2],
+    position: [0, 0, 0],
     rotation: [0, 1, 0]
   },
 ];
