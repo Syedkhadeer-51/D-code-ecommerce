@@ -16,15 +16,15 @@ const categories = [
 const CategoryList = () => {
   return (
     <section className="py-8" id='categories'>
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl md:max-w-full mx-auto px-2">
         <h3 className="text-center text-lg font-medium text-gray-700 mb-6">Explore our Categories</h3>
 
         <div className="flex items-center justify-center gap-6 mb-8 flex-wrap">
           {categories.map((cat) => (
             <Link key={cat.id} to={`/category/${cat.id}`} className="flex flex-col items-center gap-2 focus:outline-none">
-              <div className={`w-20 h-20 rounded-full flex items-center justify-center bg-white shadow`}>
+              <div className={`w-32 h-32 rounded-full flex items-center justify-center bg-white shadow`}>
                 {cat.icon ? (
-                  <img src={cat.icon} alt={cat.label} className="w-12 h-12 object-contain" />
+                  <img src={cat.icon} alt={cat.label} className="w-25 h-25 object-contain" />
                 ) : (
                   <span className="font-semibold text-lg text-gray-700">{cat.label[0]}</span>
                 )}

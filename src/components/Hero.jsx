@@ -16,7 +16,7 @@ const Hero = () => {
       />
 
       {/* Responsive grid: 1 col mobile, 12 cols desktop */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-12 min-h-[420px] grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-8 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 pt-8 pb-12 min-h-[420px] grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-8 items-center">
         {/* Image left, hidden visually but background persists */}
         <div className="hidden md:block md:col-span-8" />
         {/* Content right */}
@@ -30,7 +30,7 @@ const Hero = () => {
           </p>
           <button
             onClick={handleScroll}
-            className="border border-red-400 text-red-500 hover:bg-red-50 font-medium px-6 py-2 rounded transition mb-3 md:mb-0"
+            className="border border-red-400 text-red-500 hover:bg-red-500 hover:text-white font-medium px-6 py-2 rounded transition mb-3 md:mb-0"
           >
             Shop Now
           </button>

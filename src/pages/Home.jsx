@@ -1,21 +1,28 @@
 import React from 'react'
 import Hero from '../components/Hero'
-import ProductList from '../components//ProductList'
 import Navbar from '../components/Navbar'
 import CategoryList from '../components/CategoryList'
 import ProductCarousel from '../components/productCarousel'
+import FeaturedProduct from '../components/FeaturedProduct'
+import NewsletterSection from '../components/NewsletterSection'
+import TrendyCollectionCarousel from '../components/TrendyCollectionCarousel'
+import BrandEngagement from '../components/BrandEngagement'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <CategoryList />
-      {/* Products-section */}
-      <h2 className="text-2xl text-blue-300 text-center p-2">
-      </h2>
-      {/* <ProductList/> */}
-      <ProductCarousel/>
+    <Navbar />
+    <main>
+        <Hero />
+        <CategoryList />
+        <TrendyCollectionCarousel/>
+        <FeaturedProduct/>
+        <ProductCarousel/>
+        <NewsletterSection/>
+        <BrandEngagement/>
+        <Footer/>
+      </main>
     </>
   )
 }

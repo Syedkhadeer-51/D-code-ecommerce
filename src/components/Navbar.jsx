@@ -5,10 +5,18 @@ import { useCartState } from '../context/CartContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
   const { cart, wishlist } = useCartState();
 
+  // keep subtle transition on scroll; don't set CSS variables or adjust layout
+  React.useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <nav className="bg-white shadow-md">
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 shadow-lg backdrop-blur-sm' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo section */}

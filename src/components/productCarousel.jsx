@@ -109,7 +109,7 @@ const ProductCarousel = () => {
   };
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto py-8">
+    <div className="relative max-w-7xl md:max-w-full mx-auto py-8">
       {/* Carousel */}
       <div className="relative">
         <button
