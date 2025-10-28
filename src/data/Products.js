@@ -10,7 +10,9 @@ export const products = [
     category: 'watches',
     ratings: 4.8,
     discount: 15,
-    fov:12
+    fov: 3,
+    position: [0, 0, 0],
+    rotation: [0, Math.PI / 4, 0]
   },
   {
     id: "2",
@@ -23,9 +25,11 @@ export const products = [
     category: 'accessories',
     ratings: 4.8,
     discount: 15,
-    fov:12
-   },
-   {
+    fov: 12,
+    position: [0, 0, 0],
+    rotation: [0, 0, 0]
+  },
+  {
     id: "3",
     name: "Ikea Chair",
     price: "5499",
@@ -36,6 +40,83 @@ export const products = [
     category: 'furniture',
     ratings: 4.8,
     discount: 15,
-    fov:22
-    },
+    fov: 22,
+    position: [0, -0.2, 0],
+    rotation: [0, 0.5, 0]
+  },
+  {
+    id: "4",
+    name: " Eames Lounge Chair",
+    price: "55000",
+    thumbnail: "/thumbnails/ems-thumbnail.png",
+    model: "/models/herman_miller_eames_lounge_chair.glb",
+    description: "Classic Eames Lounge Chair by Herman Miller.",
+    brand: "Herman Miller",
+    category: 'furniture',
+    ratings: 4.5,
+    discount: 15,
+    fov: 30,
+    position: [0, -0.2, 1],
+    rotation: [0, Math.PI / 4, 0]
+  },
+  {
+    id: "5",
+    name: "Seiko Watch",
+    price: "9,999",
+    thumbnail: "/thumbnails/seiko-watch-thumbnail.png",
+    model: "/models/seiko-watch.glb",
+    description: "Seiko Men's Stainless Steel Watch.",
+    brand: "Seiko",
+    category: 'watches',
+    ratings: 4.6,
+    discount: 15,
+    fov: 2,
+    position: [0, -0.05, 0],
+    rotation: [-0.32, -0.5, 0]
+  },
+  {
+    id: "6",
+    name: "Rayban Sunglasses",
+    price: "5,999",
+    thumbnail: "/thumbnails/rayban-glasses-thumbnail.png",
+    model: "/models/wayfarer_frame.glb",
+    description: "Seiko Men's Stainless Steel Watch.",
+    brand: "Rayban",
+    category: 'eyewear',
+    ratings: 4.6,
+    discount: 15,
+    fov: 35,
+    position: [0, 0, 0],
+    rotation: [0, 0, 0]
+  },
+  {
+    id: "7",
+    name: "Ed Green formal Shoes",
+    price: "6,999",
+    thumbnail: "/thumbnails/ed-green-thumbnail.png",
+    model: "/models/ed-green-shoes.glb",
+    description: "Seiko Men's Stainless Steel Watch.",
+    brand: "Rayban",
+    category: 'footwear',
+    ratings: 4.6,
+    discount: 15,
+    fov: 5,
+    position: [0, 0, 0],
+    rotation: [0, 0, 0]
+  },
+   {
+    id: "8",
+    name: "Cartier engagement ring",
+    price: "3,65,999",
+    thumbnail: "/thumbnails/cartier-ring-thumbnail.png",
+    model: "/models/cartier-ring.glb",
+    description: "cartier engagement ring with diamond.",
+    brand: "Cartier",
+    category: 'jewellery',
+    ratings: 4.6,
+    discount: 15,
+    fov: 40,
+    position: [0, 0.65, -2],
+    rotation: [0, 1, 0]
+  },
 ];

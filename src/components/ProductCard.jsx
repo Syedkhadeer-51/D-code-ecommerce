@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, category }) => {
   return (
     <div className="max-w-sm rounded-lg shadow-lg p-4 m-3 flex flex-col justify-between bg-white hover:shadow-xl transition-shadow duration-300">
       <div className="overflow-hidden rounded-md h-50 w-full mb-4">
@@ -25,8 +25,9 @@ const ProductCard = ({ product }) => {
           {product.description}
         </p>
       </div>
-      <Link 
-        to={`/product/${product.id}`} 
+      <Link
+        to={`/product/${product.id}`}
+        state={category ? { fromCategory: category } : undefined}
         className="mt-4 inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-colors duration-300"
       >
         View in 3D

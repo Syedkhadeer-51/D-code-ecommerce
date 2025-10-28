@@ -6,7 +6,7 @@ const categories = [
   { id: 'jewellery', label: 'Jewellery', icon: '/assets/jewellery.png' },
   { id: 'watches', label: 'Watches', icon: '/assets/watches.png' },
   { id: 'eyewear', label: 'Eyewear', icon: '/assets/eyewear.png' },
-  { id: 'accessories', label: 'Accessories', icon: '/assets/accessories.png' },
+  { id: 'accessories', label: 'Accessories', icon: '/assets/electronics-category.png' },
   { id: 'footwear', label: 'Footwear', icon: '/assets/footwear.png' },
   { id: 'furniture', label: 'Furniture', icon: '/assets/furniture.png' },
 ];

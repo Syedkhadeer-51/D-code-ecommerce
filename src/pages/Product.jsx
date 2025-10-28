@@ -3,7 +3,7 @@ import { products } from '../data/Products';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { OrbitControls, Environment } from '@react-three/drei';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Heart, Share2, Star, CircleChevronLeft, Rotate3D, ZoomIn } from 'lucide-react';
 import ProductMesh from '../scene/ProductMesh';
 import { useCartDispatch } from '../context/CartContext';
@@ -18,20 +18,28 @@ const Product = () => {
   }
   const dispatch = useCartDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+  const fromCategory = location.state && location.state.fromCategory;
 
   return (
     <section className="bg-white py-8">
       <div className="container mx-auto px-4">
-        {/* Back to Home Button */}
+        {/* Back to category*/}
         <div className="mb-8 flex">
-          <Link
-            to="/"
+          <button
+            onClick={() => {
+              if (fromCategory) {
+                navigate(`/category/${fromCategory}`);
+              } else {
+                navigate(-1);
+              }
+            }}
             className="bg-gray-900 hover:bg-gray-800 text-white py-2.5 px-6 rounded-lg font-bold transition-colors duration-200 flex items-center"
           >
             <CircleChevronLeft size={20} className="text-white mr-2" />
 
-            Back to Home
-          </Link>
+            Back
+          </button>
         </div>
         <div className="flex flex-col md:flex-row gap-8 bg-white shadow-lg rounded-xl p-6">
           {/* Left: 3D Canvas */}
@@ -41,7 +49,11 @@ const Product = () => {
                 <ambientLight intensity={0.8} />
                 <directionalLight position={[5, 5, 5]} />
                 <Suspense fallback={null}>
-                  <ProductMesh modelUrl={product.model} />
+                  <ProductMesh 
+                    modelUrl={product.model} 
+                    position={product.position}
+                    rotation={product.rotation}
+                  />
                 </Suspense>
                 <OrbitControls makeDefault enablePan enableZoom enableRotate />
                 <Environment preset="city" />
