@@ -56,7 +56,7 @@ export const products = [
     ratings: 4.5,
     discount: 15,
     fov: 30,
-    position: [0, -0.2, 1],
+    position: [0, -0.4, 0],
     rotation: [0, Math.PI / 4, 0]
   },
   {

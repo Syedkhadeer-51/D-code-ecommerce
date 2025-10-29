@@ -27,10 +27,10 @@ const CategoryProducts = () => {
           />
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
-        <div className="relative max-w-6xl mx-auto px-4 h-full flex flex-col justify-start">
-          <Link to="/" className="text-white mb-4 hover:underline pt-15">&larr; Back to Home</Link>
-          <h1 className="text-4xl font-bold text-white mb-4">{details.title}</h1>
-          <p className="text-gray-100 max-w-2xl">{details.description}</p>
+        <div className="relative max-w-6xl mx-auto px-6 h-full flex flex-col justify-start">
+          <Link to="/" className="text-white mb-4 hover:underline pt-15 pl-2">&larr; Back to Home</Link>
+          <h1 className="text-4xl font-bold text-white mb-4 pl-2">{details.title}</h1>
+          <p className="text-gray-100 max-w-2xl pl-2">{details.description}</p>
         </div>
       </div>
 

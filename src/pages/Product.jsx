@@ -59,7 +59,7 @@ const Product = () => {
                 <Environment preset="city" />
               </Canvas>
               {/* 3D Interaction Instructions */}
-              <div className="my-3 bg-gray-100 rounded-md py-2 px-4 text-gray-700 text-xs flex items-center gap-3 shadow-sm w-fit mx-auto">
+              {/* <div className="my-3 bg-gray-100 rounded-md py-2 px-4 text-gray-700 text-xs flex items-center gap-3 shadow-sm w-fit mx-auto">
                 <span className="flex items-center gap-1">
                   <Rotate3D size={18} className="mr-1" />
                   <span>Orbit: Drag with mouse</span>
@@ -69,7 +69,7 @@ const Product = () => {
                   <span>Zoom: Use Scroll wheel</span>
                 </span>
 
-              </div>
+              </div> */}
             </div>
           </div>
           {/* Right: Details */}
