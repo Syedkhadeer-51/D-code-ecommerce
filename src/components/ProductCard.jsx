@@ -37,7 +37,6 @@ const ProductCard = ({ product, category }) => {
   return (
     <div className="bg-white rounded-lg p-4 hover:shadow-lg transition-shadow duration-200">
       <div className="relative rounded-md overflow-hidden bg-gray-50 mb-3">
-      =
         <div className="w-full h-56 sm:h-64 md:h-48 lg:h-56">
           <img
             className="w-full h-full object-cover"
