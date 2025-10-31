@@ -96,7 +96,7 @@ const ProductCard = ({ product, category }) => {
       // Only close if backdrop itself is clicked, not its children
       if (e.target === e.currentTarget) setShow3D(false)
     }}>
-          <div className="bg-white/95 w-[90%] md:w-3/4 lg:w-2/3 rounded-xl overflow-hidden relative">
+          <div className="bg-white/95 w-[90%] md:w-3/4 lg:w-2/3 rounded-xl overflow-hidden relative shadow-2xl">
           
 
             <div className="w-full h-[520px] bg-gray-50">
