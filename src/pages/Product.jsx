@@ -44,7 +44,7 @@ const Product = () => {
         <div className="flex flex-col md:flex-row gap-8 bg-white shadow-lg rounded-xl p-6">
           {/* Left: 3D Canvas */}
           <div className="w-full md:w-1/2 flex justify-center items-center bg-gray-50 rounded-xl p-4">
-            <div className="w-full h-[320px] md:h-[440px] max-w-lg">
+            <div className="w-full h-80 md:h-[440px] max-w-lg">
               <Canvas className="w-full h-full" camera={{ position: [0, 2, 5], fov: product.fov || 20 }}>
                 <ambientLight intensity={0.8} />
                 <directionalLight position={[5, 5, 5]} />
