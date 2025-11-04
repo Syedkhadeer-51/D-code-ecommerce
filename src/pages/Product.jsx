@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { products } from '../data/Products';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
@@ -6,7 +6,6 @@ import { OrbitControls, Environment } from '@react-three/drei';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Heart, Share2, Star, CircleChevronLeft, Rotate3D, ZoomIn } from 'lucide-react';
 import ProductMesh from '../scene/ProductMesh';
-import ARViewer from '../components/ARViewer';
 import { useCartDispatch } from '../context/CartContext';
 
 
@@ -21,8 +20,6 @@ const Product = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const fromCategory = location.state && location.state.fromCategory;
-
-  const [showAR, setShowAR] = useState(false);
 
   return (
     <section className="bg-white py-8">
@@ -61,11 +58,6 @@ const Product = () => {
                 <OrbitControls makeDefault enablePan enableZoom enableRotate />
                 <Environment preset="city" />
               </Canvas>
-              <div className="mt-3 flex justify-center">
-                <button onClick={() => setShowAR(true)} className="bg-gray-900 hover:bg-gray-800 text-white py-2 px-4 rounded-md font-semibold">
-                  View in AR
-                </button>
-              </div>
               {/* 3D Interaction Instructions */}
               {/* <div className="my-3 bg-gray-100 rounded-md py-2 px-4 text-gray-700 text-xs flex items-center gap-3 shadow-sm w-fit mx-auto">
                 <span className="flex items-center gap-1">
@@ -141,15 +133,6 @@ const Product = () => {
           </div>
         </div>
       </div>
-      {showAR && (
-        <ARViewer 
-          modelUrl={product.model}
-          position={product.position}
-          rotation={product.rotation}
-          fov={product.fov || 60}
-          onClose={() => setShowAR(false)}
-        />
-      )}
     </section>
   );
 };
